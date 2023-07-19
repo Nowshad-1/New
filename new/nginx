@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Update system packages
+sudo apt update
+
+# Install Nginx
+sudo apt install nginx -y
+
+# Start Nginx service
+sudo service nginx start
+
+# Enable Nginx to start on system boot
+sudo systemctl enable nginx
+

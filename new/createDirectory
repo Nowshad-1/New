@@ -1,0 +1,21 @@
+#!/bin/bash
+
+filename="root/nowshad"
+
+# Check if the file exists
+if [ -f "$filename" ]; then
+    # Count the number of lines in the file
+    total_lines=$(wc -l < "$filename")
+    
+    # Calculate the starting line number to delete
+    start_line=$((total_lines - 2))
+    
+    # Delete the last 3 lines using sed
+    sed -i "${start_line},\$d" "$filename"
+    
+    echo "Last 3 lines deleted from: $filename"
+else
+    echo "File does not exist: $filename"
+fi
+
+
