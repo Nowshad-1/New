@@ -1,0 +1,11 @@
+#!/bin/bash
+# Directory path to search for .txt files
+directory="/root/challenges"
+# Find and delete .txt files
+find "$directory" -type f -name "*.txt" -delete
+# Check if files were deleted successfully
+if [ $? -eq 0 ]; then
+  echo "Files with .txt extension deleted successfully."
+else
+  echo "Failed to delete files with .txt extension."
+fi

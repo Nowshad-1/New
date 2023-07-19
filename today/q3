@@ -1,0 +1,13 @@
+#!/bin/bash
+# Update package lists
+sudo apt update
+# Install Nginx
+sudo apt install -y nginx
+# Configure Nginx to run on port 80
+sudo sed -i 's/listen\s*80;/listen 80 default_server;/g' /etc/nginx/sites-available/default
+# Restart Nginx
+sudo systemctl restart nginx
+# Check if Nginx is running on port 80
+netstat -tuln | grep ":80"
+# Print Nginx status
+sudo systemctl status nginx
